@@ -11,6 +11,8 @@ readme = "README.rst"
 python = "^3.12"
 darca-log-facility = "^0.1.0"
 darca-exception = "^0.1.0"
+darca-space-manager = "^0.3.0"
+darca-git = "^0.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
