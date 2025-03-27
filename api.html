@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference &mdash; DARCA&#39;s git manager for darca spaces. 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Usage Guide" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DARCA's git manager for darca spaces.
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.checkout_branch"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.checkout_branch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.checkout_path"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.checkout_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.checkout_path_from_branch"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.checkout_path_from_branch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.clone_repo"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.clone_repo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.commit_all"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.commit_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.commit_file"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.commit_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.get_status"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.get_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.init_repo"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.init_repo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.pull_repo"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.pull_repo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darca_space_git.space_git.SpaceGitManager.push_repo"><code class="docutils literal notranslate"><span class="pre">SpaceGitManager.push_repo()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DARCA's git manager for darca spaces.</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-darca_space_git.space_git">
+<span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-darca_space_git.space_git" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">darca_space_git.space_git.</span></span><span class="sig-name descname"><span class="pre">SpaceGitManager</span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manages Git operations within darca-space-managed logical spaces.</p>
+<p>This manager ensures that all Git interactions occur within paths allocated
+by the <cite>SpaceManager</cite>. All operations are scoped to these managed spaces
+and avoid any direct user interaction with the file system.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.checkout_branch">
+<span class="sig-name descname"><span class="pre">checkout_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.checkout_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.checkout_branch" title="Link to this definition"></a></dt>
+<dd><p>Checkout an existing or new branch.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>branch (str): Branch name.
+create (bool): Whether to create the branch.
+dry_run (bool): If True, simulate without making changes.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful or simulated.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If checkout fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.checkout_path">
+<span class="sig-name descname"><span class="pre">checkout_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.checkout_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.checkout_path" title="Link to this definition"></a></dt>
+<dd><p>Revert file(s) in the working directory to the last committed state.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>paths (str | List[str]): File path(s) relative to space root.
+dry_run (bool): If True, simulate the operation.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful or simulated.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If file is missing or operation fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.checkout_path_from_branch">
+<span class="sig-name descname"><span class="pre">checkout_path_from_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.checkout_path_from_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.checkout_path_from_branch" title="Link to this definition"></a></dt>
+<dd><p>Restore file(s) from a specific branch into the working directory.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>paths (str | List[str]): Path(s) to restore.
+branch (str): Source branch.
+dry_run (bool): If True, simulate the operation.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful or simulated.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If restore fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.clone_repo">
+<span class="sig-name descname"><span class="pre">clone_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.clone_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.clone_repo" title="Link to this definition"></a></dt>
+<dd><p>Clone a Git repository into the given space.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>repo_url (str): URL of the remote repository.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If cloning fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.commit_all">
+<span class="sig-name descname"><span class="pre">commit_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.commit_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.commit_all" title="Link to this definition"></a></dt>
+<dd><p>Stage and commit all changes in the repository.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>message (str): Commit message.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If committing fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.commit_file">
+<span class="sig-name descname"><span class="pre">commit_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.commit_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.commit_file" title="Link to this definition"></a></dt>
+<dd><p>Commit a specific file. Creates the file if it doesn’t exist and
+content is provided.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>relative_path (str): Path to the file relative to the space root.
+message (str): Commit message.
+content (Optional[str | dict]): Optional file content to create if
+missing.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If file is missing with no content, or commit
+fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porcelain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.get_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.get_status" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the Git status of the repository.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>porcelain (bool): Whether to return porcelain output.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: Output of <cite>git status</cite>.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If status command fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.init_repo">
+<span class="sig-name descname"><span class="pre">init_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.init_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.init_repo" title="Link to this definition"></a></dt>
+<dd><p>Initialize a new Git repository in the given space.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: True if successful.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If initialization fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.pull_repo">
+<span class="sig-name descname"><span class="pre">pull_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.pull_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.pull_repo" title="Link to this definition"></a></dt>
+<dd><p>Pull the latest changes from the remote repository.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: True if successful.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If pull operation fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="darca_space_git.space_git.SpaceGitManager.push_repo">
+<span class="sig-name descname"><span class="pre">push_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">space_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/darca_space_git/space_git.html#SpaceGitManager.push_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#darca_space_git.space_git.SpaceGitManager.push_repo" title="Link to this definition"></a></dt>
+<dd><p>Push local changes to the remote repository.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>remote_url (Optional[str]): Optional remote URL to push to.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if successful.</p>
+</dd>
+<dt>Raises:</dt><dd><p>SpaceGitException: If push operation fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright (c) 2025 darca-space-git Contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
