@@ -1,6 +1,6 @@
-============================
+===============================
 Contributing to Darca Space Git
-============================
+===============================
 
 We welcome community contributions to **darca-space-git**!
 

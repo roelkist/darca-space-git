@@ -4,9 +4,9 @@ repos:
   hooks:
   - id: check-added-large-files
   - id: end-of-file-fixer
-    files: 'src/darca_space_manager/'
+    files: 'src/darca_space_git/'
   - id: trailing-whitespace
-    files: 'src/darca_space_manager/'
+    files: 'src/darca_space_git/'
   - id: check-yaml
     files: '.github/'
 
@@ -33,5 +33,5 @@ repos:
   rev: '1.8.3'
   hooks:
   - id: bandit
-    args: ["-r", "src/darca_space_manager/"]
+    args: ["-r", "src/darca_space_git/"]
     exclude: tests

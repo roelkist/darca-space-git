@@ -1,5 +1,6 @@
+from typing import Any, Dict, Optional
+
 from darca_exception.exception import DarcaException
-from typing import Optional, Dict, Any
 
 
 class SpaceGitException(DarcaException):
@@ -12,8 +13,10 @@ class SpaceGitException(DarcaException):
     Attributes:
         message (str): A human-readable description of the error.
         error_code (str): A machine-readable identifier for the error type.
-        metadata (dict): Additional contextual information relevant to the error.
-        cause (Exception): Optional underlying exception that caused this error.
+        metadata (dict): Additional contextual information relevant to the
+                         error.
+        cause (Exception): Optional underlying exception that caused this
+                           error.
     """
 
     def __init__(
@@ -28,10 +31,13 @@ class SpaceGitException(DarcaException):
 
         Args:
             message (str): A user-friendly description of the error.
-            error_code (Optional[str]): A custom error code to identify the issue.
+            error_code (Optional[str]): A custom error code to identify
+                                        the issue.
                 Defaults to "SPACE_GIT_ERROR" if not provided.
-            metadata (Optional[Dict[str, Any]]): Contextual metadata (e.g. space name, file path).
-            cause (Optional[Exception]): Original exception causing the error, if any.
+            metadata (Optional[Dict[str, Any]]): Contextual metadata (
+                                                 e.g. space name, file path).
+            cause (Optional[Exception]): Original exception causing the
+                                         error, if any.
         """
         super().__init__(
             message=message,

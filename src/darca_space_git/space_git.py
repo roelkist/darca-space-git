@@ -1,10 +1,9 @@
-import os
-from typing import List, Union, Optional
+from typing import List, Optional, Union
 
-from darca_log_facility.logger import DarcaLogger
-from darca_space_manager.space_manager import SpaceManager
-from darca_space_manager.space_file_manager import SpaceFileManager
 from darca_git.git import Git, GitException
+from darca_log_facility.logger import DarcaLogger
+from darca_space_manager.space_file_manager import SpaceFileManager
+from darca_space_manager.space_manager import SpaceManager
 
 from .exceptions import SpaceGitException
 
@@ -145,21 +144,24 @@ class SpaceGitManager:
         space_name: str,
         relative_path: str,
         message: str,
-        content: Optional[Union[str, dict]] = None
+        content: Optional[Union[str, dict]] = None,
     ) -> bool:
         """
-        Commit a specific file. Creates the file if it doesn't exist and content is provided.
+        Commit a specific file. Creates the file if it doesn't exist and
+        content is provided.
 
         Args:
             relative_path (str): Path to the file relative to the space root.
             message (str): Commit message.
-            content (Optional[str | dict]): Optional file content to create if missing.
+            content (Optional[str | dict]): Optional file content to create if
+            missing.
 
         Returns:
             bool: True if successful.
 
         Raises:
-            SpaceGitException: If file is missing with no content, or commit fails.
+            SpaceGitException: If file is missing with no content, or commit
+            fails.
         """
         path = self._get_repo_path(space_name)
         try:
@@ -171,7 +173,9 @@ class SpaceGitManager:
                         metadata={"space": space_name, "file": relative_path},
                     )
                 self.file_manager.set_file(space_name, relative_path, content)
-                logger.debug(f"Created file '{relative_path}' in space '{space_name}'")
+                logger.debug(
+                    f"Created file '{relative_path}' in space '{space_name}'"
+                )
 
             self.git.add(relative_path, cwd=path)
             self.git.commit(message, cwd=path)
@@ -206,7 +210,9 @@ class SpaceGitManager:
                 cause=e,
             )
 
-    def push_repo(self, space_name: str, remote_url: Optional[str] = None) -> bool:
+    def push_repo(
+        self, space_name: str, remote_url: Optional[str] = None
+    ) -> bool:
         """
         Push local changes to the remote repository.
 
@@ -231,7 +237,13 @@ class SpaceGitManager:
                 cause=e,
             )
 
-    def checkout_branch(self, space_name: str, branch: str, create: bool = False, dry_run: bool = False) -> bool:
+    def checkout_branch(
+        self,
+        space_name: str,
+        branch: str,
+        create: bool = False,
+        dry_run: bool = False,
+    ) -> bool:
         """
         Checkout an existing or new branch.
 
@@ -248,7 +260,10 @@ class SpaceGitManager:
         """
         path = self._get_repo_path(space_name)
         if dry_run:
-            logger.info(f"[DRY-RUN] Would checkout branch '{branch}' (create={create}) in space '{space_name}'")
+            logger.info(
+                f"[DRY-RUN] Would checkout branch '{branch}' "
+                f"(create={create}) in space '{space_name}'"
+            )
             return True
 
         try:
@@ -258,11 +273,20 @@ class SpaceGitManager:
             raise SpaceGitException(
                 message="Failed to checkout branch.",
                 error_code="CHECKOUT_BRANCH_FAILED",
-                metadata={"space": space_name, "branch": branch, "create": create},
+                metadata={
+                    "space": space_name,
+                    "branch": branch,
+                    "create": create,
+                },
                 cause=e,
             )
 
-    def checkout_path(self, space_name: str, paths: Union[str, List[str]], dry_run: bool = False) -> bool:
+    def checkout_path(
+        self,
+        space_name: str,
+        paths: Union[str, List[str]],
+        dry_run: bool = False,
+    ) -> bool:
         """
         Revert file(s) in the working directory to the last committed state.
 
@@ -279,7 +303,11 @@ class SpaceGitManager:
         if isinstance(paths, str):
             paths = [paths]
 
-        missing = [p for p in paths if not self.file_manager.file_exists(space_name, p)]
+        missing = [
+            p
+            for p in paths
+            if not self.file_manager.file_exists(space_name, p)
+        ]
         if missing:
             raise SpaceGitException(
                 message="Some files do not exist in the working directory.",
@@ -289,7 +317,10 @@ class SpaceGitManager:
 
         path = self._get_repo_path(space_name)
         if dry_run:
-            logger.info(f"[DRY-RUN] Would revert: {', '.join(paths)} in space '{space_name}'")
+            logger.info(
+                f"[DRY-RUN] Would revert: {', '.join(paths)} "
+                f"in space '{space_name}'"
+            )
             return True
 
         try:
@@ -308,7 +339,7 @@ class SpaceGitManager:
         space_name: str,
         paths: Union[str, List[str]],
         branch: str,
-        dry_run: bool = False
+        dry_run: bool = False,
     ) -> bool:
         """
         Restore file(s) from a specific branch into the working directory.
@@ -329,16 +360,25 @@ class SpaceGitManager:
 
         path = self._get_repo_path(space_name)
         if dry_run:
-            logger.info(f"[DRY-RUN] Would restore: {', '.join(paths)} from branch '{branch}' in space '{space_name}'")
+            logger.info(
+                f"[DRY-RUN] Would restore: {', '.join(paths)} from branch "
+                f"'{branch}' in space '{space_name}'"
+            )
             return True
 
         try:
-            self.git.checkout_path_from_branch(cwd=path, branch=branch, paths=paths)
+            self.git.checkout_path_from_branch(
+                cwd=path, branch=branch, paths=paths
+            )
             return True
         except GitException as e:
             raise SpaceGitException(
                 message="Failed to restore file(s) from branch.",
                 error_code="CHECKOUT_FILE_FROM_BRANCH_FAILED",
-                metadata={"space": space_name, "files": paths, "branch": branch},
+                metadata={
+                    "space": space_name,
+                    "files": paths,
+                    "branch": branch,
+                },
                 cause=e,
             )
