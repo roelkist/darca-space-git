@@ -261,7 +261,7 @@ files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
 ]
-markers = {main = "sys_platform == \"win32\"", dev = "sys_platform == \"win32\" or platform_system == \"Windows\"", docs = "sys_platform == \"win32\""}
+markers = {main = "sys_platform == \"win32\"", dev = "platform_system == \"Windows\" or sys_platform == \"win32\"", docs = "sys_platform == \"win32\""}
 
 [[package]]
 name = "colorlog"
@@ -455,32 +455,33 @@ colorlog = ">=6.9.0,<7.0.0"
 
 [[package]]
 name = "darca-space-manager"
-version = "0.3.0"
+version = "0.6.1"
 description = "Storage abstraction layer for managing logical spaces."
 optional = false
 python-versions = "<4.0,>=3.12"
 groups = ["main"]
 files = [
-    {file = "darca_space_manager-0.3.0-py3-none-any.whl", hash = "sha256:e4be81d6444f194e3abba2bd396556da7bd83e68330562cb85d6022e8cc17a46"},
-    {file = "darca_space_manager-0.3.0.tar.gz", hash = "sha256:3d4bc2742a7aeb87ee7f0cd3b233bdd67351346b844cf22ab4f143af9d7b5ea0"},
+    {file = "darca_space_manager-0.6.1-py3-none-any.whl", hash = "sha256:ca6d707059820b678807a66890fceef5142c579a554df0dc12c7e86c092cc890"},
+    {file = "darca_space_manager-0.6.1.tar.gz", hash = "sha256:072cc9ded65ce1f7f6fcaf733ba8e4c188e488e9d75eb8a8d0516f14dce3591a"},
 ]
 
 [package.dependencies]
 darca-exception = ">=0.1.0,<0.2.0"
+darca-executor = ">=0.1.0,<0.2.0"
 darca-file-utils = ">=0.1.0,<0.2.0"
 darca-log-facility = ">=0.1.0,<0.2.0"
-darca-yaml = ">=0.1.0,<0.2.0"
+darca-yaml = ">=0.2.0,<0.3.0"
 
 [[package]]
 name = "darca-yaml"
-version = "0.1.0"
+version = "0.2.0"
 description = "YAML utilities for reuse along projects."
 optional = false
 python-versions = "<4.0,>=3.12"
 groups = ["main"]
 files = [
-    {file = "darca_yaml-0.1.0-py3-none-any.whl", hash = "sha256:76102b76e8c3d7474ef10e0e39f658f8bfbad51e2762450002c02bb2aa5d4c3f"},
-    {file = "darca_yaml-0.1.0.tar.gz", hash = "sha256:80b32b53639c33b0483878c54cde13f26ac94c494bc6cb3e9d038257f7cd8523"},
+    {file = "darca_yaml-0.2.0-py3-none-any.whl", hash = "sha256:b69b19b80377c19c6e118968d809a627afec55e50e3a619c3ef612eb1fba842c"},
+    {file = "darca_yaml-0.2.0.tar.gz", hash = "sha256:070a737c2d758bf4f9ca514144b2366d8318800c07f79785d47d0747f835e9d8"},
 ]
 
 [package.dependencies]
@@ -1449,4 +1450,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "32ef825bd5519dd5a70ed8957f1da302aad4b553af30ba99b2f66f0c378189d8"
+content-hash = "d10be38aa53a0953a59b8bf31fcc19daa7c1aa1667a20b3b3ad412597387de5e"
